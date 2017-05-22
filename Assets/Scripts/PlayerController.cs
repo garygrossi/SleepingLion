@@ -8,14 +8,10 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Text countCreamText;
 
-    private Rigidbody2D rigidBody;
     private int count;
 
 	// Use this for initialization
 	void Start () {
-        // Get rigidbody
-        rigidBody = GetComponent<Rigidbody2D>();
-
         // Init cream collection count
         count = 0;
 
@@ -25,20 +21,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	}
-
-    // Pre physics
-    private void FixedUpdate()
-    {
-        // Get horizontal and vertical input
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        // Create a Vector2 for movement based on inputs
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        // Apply the movement to the character
-        rigidBody.AddForce(movement * speed);
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 1 + Input.GetAxis("Vertical") * 0.2f);
+        transform.position += move * speed * Time.deltaTime;
     }
 
     // Called when the player overlaps with a trigger collider
