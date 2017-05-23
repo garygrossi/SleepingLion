@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sleeping Lion", "Sleeping Lion.csproj", "{74147B10-E92D-B744-C351-87F5F69D12F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sleeping Lion.Editor", "Sleeping Lion.Editor.csproj", "{AFCEDDDC-3CAA-91F7-2B1F-09F412F1106A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{74147B10-E92D-B744-C351-87F5F69D12F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74147B10-E92D-B744-C351-87F5F69D12F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74147B10-E92D-B744-C351-87F5F69D12F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCEDDDC-3CAA-91F7-2B1F-09F412F1106A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCEDDDC-3CAA-91F7-2B1F-09F412F1106A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCEDDDC-3CAA-91F7-2B1F-09F412F1106A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCEDDDC-3CAA-91F7-2B1F-09F412F1106A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

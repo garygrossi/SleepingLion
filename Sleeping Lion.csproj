@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraRunner.cs" />
-    <Compile Include="Assets\Scripts\DestroyerScript.cs" />
+    <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Spawn_BG.cs" />

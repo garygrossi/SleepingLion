@@ -32,13 +32,14 @@ public class PlayerController : MonoBehaviour {
         if (collision.gameObject.CompareTag("Cream"))
         {
             collision.gameObject.SetActive(false);
-            count = count + 1;
+            count = count + 100;
             SetCountText();
         } 
     }
 
     void SetCountText()
     {
+        Data.Score = count;
         countCreamText.text = "Cream Collected: " + count.ToString();
     }
 }
