@@ -19,6 +19,5 @@ public class Replay : MonoBehaviour {
     void TaskOnClick()
     {
         SceneManager.LoadScene(0);
-        Debug.Log("You have clicked the button!");
     }
 }

@@ -8,14 +8,34 @@ public class Spawn : MonoBehaviour {
     public float minSpawnTime = 1f;
     public float maxSpawnTime = 2f;
 
+    private bool pause;
+
 	// Use this for initialization
 	void Start () {
         Spawner();
+        pause = false;
 	}
-	
+
+    void Update()
+    {
+        if (Input.GetKeyDown("space")) {
+            if (pause)
+            {
+                pause = false;
+                Invoke("Spawner", Random.Range(minSpawnTime, maxSpawnTime));
+                Debug.Log("Play");
+            } else { 
+                pause = true;
+                Debug.Log("Paused");
+            }
+        }
+    }
+
     void Spawner()
     {
-        Instantiate(objects[Random.Range(0, objects.GetLength(0))], transform.position, Quaternion.identity);
-        Invoke("Spawner", Random.Range(minSpawnTime, maxSpawnTime));
+        if (!pause) { 
+            Instantiate(objects[Random.Range(0, objects.GetLength(0))], transform.position, Quaternion.identity);
+            Invoke("Spawner", Random.Range(minSpawnTime, maxSpawnTime));
+        }
     }
 }
