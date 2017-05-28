@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
     public float speed;
     public Text countCreamText;
+    public Text lifeText;
     public AudioSource backgroundMusic;
     //public AudioSource gameplayAudio;
 
     private int count;
     private int counter;
+    private int life;
     private float speedMod = 0.001f;
     private bool pause;
     private Animator anim;
@@ -21,12 +24,14 @@ public class PlayerController : MonoBehaviour {
         // Init cream collection count
         count = 0;
         counter = 0;
+        life = 3;
         pause = false;
 
         anim = GetComponent<Animator>();
 
         // Set the count text
         SetCountText();
+        SetLifeBar();
     }
 	
 	// Update is called once per frame
@@ -79,11 +84,16 @@ public class PlayerController : MonoBehaviour {
         if (collision.gameObject.CompareTag("Glass"))
         {
             // Do something
+            life--;
+            SetLifeBar();
         }
         
         if (collision.gameObject.CompareTag("Rock"))
         {
             // Do something
+            //speed = 5;
+            life--;
+            SetLifeBar();
         }
         
     }
@@ -92,5 +102,15 @@ public class PlayerController : MonoBehaviour {
     {
         Data.Score = count;
         countCreamText.text = "Score: " + count.ToString();
+    }
+
+    void SetLifeBar()
+    {
+        Data.Life = life;
+        lifeText.text = "Health: " + life.ToString();
+        if (life <= 0)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }

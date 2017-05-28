@@ -13,7 +13,7 @@ public class DestroyerScript : MonoBehaviour {
         }
         else if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(1);
+            //Do nothing
         }
         else
         {
