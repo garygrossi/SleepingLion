@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\CameraRunner.cs" />
     <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\DestroyerScript.cs" />
+    <Compile Include="Assets\Scripts\HealthController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Replay.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
