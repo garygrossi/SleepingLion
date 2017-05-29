@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour {
         lifeText.text = "Health: " + life.ToString();
         if (life <= 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }

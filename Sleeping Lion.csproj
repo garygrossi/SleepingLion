@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Replay.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Spawn_BG.cs" />
+    <Compile Include="Assets\Scripts\StartScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

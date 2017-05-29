@@ -6,17 +6,23 @@ using UnityEngine.UI;
 
 public class Replay : MonoBehaviour {
 
-    public Button replayButton;
+    public Button homeButton;
     public Text countCreamText;
 
     void Start()
     {
         countCreamText.text = Data.Score.ToString();
-        Button btn = replayButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        Button btn = GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClickReplay);
+        homeButton.onClick.AddListener(TaskOnClickHome);
     }
 
-    void TaskOnClick()
+    void TaskOnClickReplay()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    void TaskOnClickHome()
     {
         SceneManager.LoadScene(0);
     }
