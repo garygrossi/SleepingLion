@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("Glass"))
         {
+            anim.SetTrigger("glass");
+            anim.SetTrigger("getup");
             glassEffect.Play();
             life--;
             SetLifeBar();
