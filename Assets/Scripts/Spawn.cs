@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour {
 
     public GameObject[] objects;
     public float minSpawnTime = 1f;
-    public float maxSpawnTime = 2f;
+    public float maxSpawnTime = 5f;
 
     private bool pause;
 

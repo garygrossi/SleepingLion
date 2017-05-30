@@ -56,17 +56,22 @@ public class PlayerController : MonoBehaviour {
 
         if (!pause) { 
             counter = counter + 1;
-            if (counter == 60)
+            if (counter == 20)
             {
                 count += 10;
                 SetCountText();
                 counter = 0;
             }
 
-            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 1 + Input.GetAxis("Vertical") * 0.2f);
-            transform.position += move * speed * Time.deltaTime;
+            if (Data.speed < 5)
+            {
+                Data.speed = Data.speed + 0.1f;
+            }
 
-            speed = speed + speedMod;
+            Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 1 + Input.GetAxis("Vertical") * 0.2f);
+            transform.position += move * Data.speed * Time.deltaTime;
+
+            Data.speed = Data.speed + speedMod;
         }
     }
 
@@ -76,7 +81,7 @@ public class PlayerController : MonoBehaviour {
         // Check what game object it is
         if (collision.gameObject.CompareTag("Cream"))
         {
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
             count = count + 100;
             SetCountText();
         }
@@ -90,10 +95,8 @@ public class PlayerController : MonoBehaviour {
         
         if (collision.gameObject.CompareTag("Rock"))
         {
-            // Do something
-            //speed = 5;
-            life--;
-            SetLifeBar();
+            transform.position += new Vector3(0,0.8f);
+            HitARock();
         }
         
     }
@@ -112,5 +115,14 @@ public class PlayerController : MonoBehaviour {
         {
             SceneManager.LoadScene(2);
         }
+    }
+
+    void HitARock()
+    {
+        anim.SetTrigger("fall");
+        anim.SetTrigger("getup");
+        Data.speed = 0;
+        life--;
+        SetLifeBar();
     }
 }

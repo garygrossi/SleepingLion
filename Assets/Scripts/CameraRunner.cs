@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraRunner : MonoBehaviour {
 
     public Transform player;
+    public GameObject pauseOverlay;
 
-    private float speed = 5;
+    //private float speed = 5;
     private float speedmod = 0.001f;
     private bool pause;
 
@@ -22,19 +23,21 @@ public class CameraRunner : MonoBehaviour {
             if (pause)
             {
                 pause = false;
+                pauseOverlay.SetActive(false);
                 Debug.Log("Play");
             }
             else
             {
                 pause = true;
+                pauseOverlay.SetActive(true);
                 Debug.Log("Paused");
             }
         }
 
         if (!pause)
         {
-            transform.position += new Vector3(0, speed * Time.deltaTime);
-            speed += speedmod;
+            transform.position += new Vector3(0, Data.speed * Time.deltaTime);
+            //speed += speedmod;
         }
 	}
 }
