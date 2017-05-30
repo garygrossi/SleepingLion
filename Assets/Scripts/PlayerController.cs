@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour {
     public Text countCreamText;
     public Text lifeText;
     public AudioSource backgroundMusic;
-    //public AudioSource gameplayAudio;
+    public AudioSource rockEffect;
+    public AudioSource glassEffect;
 
     private int count;
     private int counter;
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("Glass"))
         {
-            // Do something
+            glassEffect.Play();
             life--;
             SetLifeBar();
         }
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour {
     {
         anim.SetTrigger("fall");
         anim.SetTrigger("getup");
+        rockEffect.Play();
         Data.speed = 0;
         life--;
         SetLifeBar();
