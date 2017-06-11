@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public AudioSource backgroundMusic;
     public AudioSource rockEffect;
     public AudioSource glassEffect;
+    public AudioSource creamEffect;
 
     private int count;
     private int counter;
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour {
         if (collision.gameObject.CompareTag("Cream"))
         {
             Destroy(collision.gameObject);
+            creamEffect.Play();
             count = count + 100;
             SetCountText();
         }
